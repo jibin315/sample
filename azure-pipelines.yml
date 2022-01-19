@@ -1,7 +1,5 @@
-# Node.js with Angular
-# Build a Node.js project that uses Angular.
-# Add steps that analyze code, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+# First test pipeline
+
 
 trigger:
 - master
@@ -9,9 +7,14 @@ trigger:
 pool:
   vmImage: Default
 
-steps:
-- task:
-  displayName: 'Install Node.js'
+stages:
 
-- script: 
-  displayName: 'npm install and build'
+  - stage: stage1
+    displayName: stage 1 started
+    jobs:
+
+      - job: job1
+        displayName: job 1 started
+        steps:
+
+          - script: echo "Hello World"
